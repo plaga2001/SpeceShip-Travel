@@ -1,0 +1,24 @@
+@keyframes animationStar {
+    from{
+        background-position-y: 500%;
+    }
+    to{
+        background-position-y: 0%;
+    }
+}
+
+.Star{
+    position: relative;
+    min-width: 100%;
+    min-height: 100vh;
+    padding: .625rem;
+    background-image: url("../img/stars.png");
+    overflow: hidden;
+}
+
+.Space{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(to right, #000e17,  #060611);
+    animation: animationStar 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}

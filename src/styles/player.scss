@@ -1,0 +1,11 @@
+.Player{
+    width: 80px;
+    height: 100px;
+    background-image: url("../img/space-ship.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - (80px / 2));
+}
