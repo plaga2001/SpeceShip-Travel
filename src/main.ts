@@ -1,5 +1,5 @@
 import './main.scss'
-import Player from './player/PlayerController';
+import Player from './player/PlayerRaw';
 import PointsController from './points/PointsController';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
