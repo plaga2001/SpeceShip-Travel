@@ -1,0 +1,15 @@
+.Enemy{
+    position: absolute;
+    padding: .625rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.Commet{
+    width: 7.5rem;
+    height: 7.5rem;
+    background-image: url(../assets/img/commet.png);
+    top: 0;
+    left: 0;
+}

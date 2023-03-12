@@ -1,8 +1,9 @@
 import Coords from "./CoordsInterface";
 
 export default interface Enemy{
+    elem: HTMLElement;
     des_points: number;
     coords: Coords;
-    mover(): void;
+    move(): void;
     colition(): void;
 }
