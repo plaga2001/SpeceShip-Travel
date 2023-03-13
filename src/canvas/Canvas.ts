@@ -4,19 +4,20 @@ import Player from '../player/PlayerRaw'
 
 export default class Canvas{
     canvas: HTMLElement;
-    private player: Player | null | SVGElement;
+    private player: Player| null;
     private factorys: Factory[];
-    speed: number;
+    private speed: number;
     private interval: any;
-    constructor(htmlCanvas: HTMLElement, player: Player){
+    constructor(htmlCanvas: HTMLElement){
         this.canvas = htmlCanvas;
-        this.player = player;
+        this.player = null;
         this.factorys = [];
         this.speed = 1000;
         this.interval = null;
+        this.create_player()
     }
     start(): void{
-        this.generate_enemies();
+        this.player!.move()
         this.interval = setInterval(() => {
             const randon = Math.round(Math.random() * ((this.factorys.length - 1) - 0) - 0)
             const enemy: Enemy = this.factorys[randon].create_enemy(this.canvas);
@@ -27,10 +28,10 @@ export default class Canvas{
     add_factory(factory: Factory){
         this.factorys.push(factory)
     }
+    private create_player(){
+        this.player = new Player(this.canvas);
+    }
     reset_game(): void{
         clearInterval(this.interval);
-    }
-    private generate_enemies(): void{
-        
     }
 }

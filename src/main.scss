@@ -13,6 +13,27 @@ $dark-font: #393939;
 $light-font: #ebebeb;
 $principal-font: "8-bit", sans-serif;
 
+
+.btnA{
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    z-index: 4;
+}
+.btn{
+    display: inline-block;
+    padding: 15px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    color: $dark-font;
+    cursor: pointer;
+    &:hover{
+        filter: brightness(120%);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;

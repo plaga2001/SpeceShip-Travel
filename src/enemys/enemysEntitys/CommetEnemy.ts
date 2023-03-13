@@ -5,12 +5,12 @@ export default class CommetEnemy implements Enemy{
     name: String;
     elem: HTMLElement;
     coords: Coords; 
-    time: number;
+    TIME: number;
     constructor(coords: Coords, elem: HTMLElement){
         this.name = "Commet";
         this.elem = elem;
         this.coords = coords;
-        this.time = 2000;
+        this.TIME = 2000;
     }
     move(): void {
         this.elem.animate([
@@ -22,11 +22,11 @@ export default class CommetEnemy implements Enemy{
                 top: `${ this.coords.final_Y }px`,
                 left: `${ this.coords.final_X }px`
             }
-        ], this.time);
+        ], this.TIME);
         
         setTimeout(() => {
             this.elem.remove();
-        }, this.time)
+        }, this.TIME)
     }   
     colition(): void {
         
