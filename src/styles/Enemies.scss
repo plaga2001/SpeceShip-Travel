@@ -1,15 +1,35 @@
+@keyframes rotate_enemy {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 .Enemy{
     position: absolute;
     padding: .625rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    animation: rotate_enemy 4s linear infinite;
 }
 
 .Commet{
-    width: 7.5rem;
-    height: 7.5rem;
-    background-image: url(../assets/img/commet.png);
-    top: 0;
-    left: 0;
+    width: clamp(4rem, 10vw,7.5rem);
+    height: clamp(4em, 10vw,7.5rem);
+    background-image: url(../assets/img/commet.png)
+}
+
+.Trash{
+    width: clamp(2.5rem, 10vw,5.625rem);
+    height: clamp(2.5rem, 10vw,5.625rem);
+    background-image: url(../assets/img/trash.png);
+}
+
+.Astroid{
+    width: clamp(5.625rem, 10vw,11.875rem);
+    height: clamp(5.625rem, 10vw,11.875rem);
+    background-image: url(../assets/img/astroid.png);   
 }

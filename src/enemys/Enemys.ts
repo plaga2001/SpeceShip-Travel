@@ -1,9 +1,10 @@
 import Coords from "./CoordsInterface";
 
 export default interface Enemy{
+    name: String;
     elem: HTMLElement;
-    des_points: number;
     coords: Coords;
+    time: number;
     move(): void;
     colition(): void;
 }

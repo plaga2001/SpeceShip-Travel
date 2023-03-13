@@ -1,7 +1,8 @@
 import './main.scss'
 import Canvas from './canvas/Canvas';
-import Player from './player/PlayerRaw';
 import CommetFactory from './factory/factorys/CommetFactory';
+import TrashFactory from './factory/factorys/TrashFactory';
+import AstroidFactory from './factory/factorys/AstroidFactory'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main class="Space">
@@ -25,8 +26,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </linearGradient>
         </defs>
       </svg>
-      <div class="Timing">Distance: <span id="distance">00</span></div>
-      <div class="Counter">Score: <span id="score">00</span></div>  
+      <div class="Counter Distance">Distance: <span id="distance">00</span></div>
+      <div class="Counter Points">Score: <span id="score">00</span></div>  
     </div>
   </main>
 `;
@@ -34,8 +35,13 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 const $canvas: HTMLElement = document.querySelector<HTMLElement>('#canvas') as HTMLElement;
 const $player: SVGElement = document.querySelector('#player') as SVGElement;
 
-const commetFactory: CommetFactory = new CommetFactory()
-const canvas = new Canvas($canvas, 5, $player);
-canvas.add_factory(commetFactory);
+const commetFactory: CommetFactory = new CommetFactory();
+const trashFactory: TrashFactory = new TrashFactory();
+const astroidFactory: AstroidFactory = new AstroidFactory();
 
-canvas.start()
+const canvas = new Canvas($canvas, $player);
+canvas.add_factory(commetFactory);
+canvas.add_factory(astroidFactory);
+canvas.add_factory(trashFactory);
+
+canvas.start();

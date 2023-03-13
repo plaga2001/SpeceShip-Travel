@@ -1,6 +1,15 @@
-.Timing{
+.Counter{
     position: absolute;
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+.Points{
+    top: .625rem;
+    left: .625rem;
+}
+
+.Distance{
     top: .625rem;
     right: .625rem;
-    font-size: 1.5em;
 }

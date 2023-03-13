@@ -2,18 +2,31 @@ import Coords from "../CoordsInterface";
 import Enemy from "../Enemys";
 
 export default class CommetEnemy implements Enemy{
+    name: String;
     elem: HTMLElement;
-    des_points: number;
     coords: Coords; 
+    time: number;
     constructor(coords: Coords, elem: HTMLElement){
+        this.name = "Commet";
         this.elem = elem;
-        this.des_points = 200;
         this.coords = coords;
+        this.time = 2000;
     }
     move(): void {
-        console.log(this.coords.initial_X)
-        this.elem.style.top = `${ this.coords.initial_Y }px`;
-        this.elem.style.left = `${ this.coords.initial_X }px`
+        this.elem.animate([
+            {
+                top: `${ this.coords.initial_Y }px`,
+                left: `${ this.coords.initial_X }px`
+            },
+            {
+                top: `${ this.coords.final_Y }px`,
+                left: `${ this.coords.final_X }px`
+            }
+        ], this.time);
+        
+        setTimeout(() => {
+            this.elem.remove();
+        }, this.time)
     }   
     colition(): void {
         
